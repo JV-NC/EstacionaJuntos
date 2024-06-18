@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".FilterFragment"
+    android:orientation="vertical">
+
+    <TextView android:id="@+id/lblFiltrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtFiltrar"
+        android:textSize="24sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        />
+
+    <RadioGroup android:id="@+id/rdgFiltrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp">
+
+        <RadioButton android:id="@+id/rdbEspAb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtEspacoAb"
+            android:textSize="16sp"/>
+
+        <RadioButton android:id="@+id/rdbFuncionamento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtFuncionamento"
+            android:textSize="16sp"/>
+
+        <RadioButton android:id="@+id/rdbDisponibilidade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtDisponibilidade"
+            android:textSize="18sp"/>
+    </RadioGroup>
+
+    <Button android:id="@+id/btnBuscar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtBuscar"
+        android:textSize="18sp"
+        android:backgroundTint="@color/darkBlue"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"/>
+
+</LinearLayout>

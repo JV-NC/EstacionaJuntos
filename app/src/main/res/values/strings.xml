@@ -12,4 +12,16 @@
     <string name="titleCadastrar">Cadastrar</string>
     <string name="titleEntrar">Login</string>
     <string name="queryHint">Encontrar Estacionamento</string>
+    <string name="txtOrdenar">Ordenar por</string>
+    <string name="txtFiltrar">Filtrar por</string>
+    <string name="txtMenorPreco">Menor Preço</string>
+    <string name="txtMaiorPreco">Maior Preço</string>
+    <string name="txtMelhorAv">Melhor Avaliação</string>
+    <string name="txtMenorDistancia">Menor Distância</string>
+    <string name="txtEspacoAb">Espaço Aberto</string>
+    <string name="txtFuncionamento">Funcionamento 24H</string>
+    <string name="txtDisponibilidade">Disponibilidade</string>
+    <string name="txtBuscar">Buscar</string>
+    <string name="txtFiltrarHome">Filtrar</string>
+    <string name="txtOrdenarHome">Ordenar</string>
 </resources>
