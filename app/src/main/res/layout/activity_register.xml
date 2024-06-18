@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.RegisterActivity">
+
+    <androidx.appcompat.widget.Toolbar android:id="@+id/toolbarRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/darkBlue"
+        app:title="@string/titleCadastrar"/>
+
+    <EditText android:id="@+id/tfNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hintNome"
+        android:inputType="textPersonName"
+        android:autofillHints=""
+        android:background="@drawable/padrao_edittext"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:selectAllOnFocus="true"/>
+
+    <EditText android:id="@+id/tfEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hintEmail"
+        android:inputType="textEmailAddress"
+        android:autofillHints=""
+        android:background="@drawable/padrao_edittext"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:selectAllOnFocus="true"/>
+
+    <EditText android:id="@+id/tfSenha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hintPassword"
+        android:inputType="textPassword"
+        android:autofillHints=""
+        android:background="@drawable/padrao_edittext"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:selectAllOnFocus="true"/>
+
+    <TextView android:id="@+id/lblSenhaObrigatoria"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="@string/txtSenhaAlert"
+        android:textAlignment="textStart"
+        android:textSize="14sp"
+        android:textColor="@color/darkRed"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="8dp"/>
+
+    <CheckBox android:id="@+id/cbNewsletter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/txtNewsletter"/>
+
+    <Button android:id="@+id/btnCadastrarRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtCadastrar"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="32dp"/>
+</LinearLayout>

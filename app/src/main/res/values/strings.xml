@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">EstacionaJuntos</string>
+    <string name="txtCadastrar">CADASTRAR</string>
+    <string name="txtEntrar">ENTRAR</string>
+    <string name="txtEsqueceuSenha">Esqueceu sua senha?</string>
+    <string name="hintNome">Nome</string>
+    <string name="hintEmail">Email</string>
+    <string name="hintPassword">Password*</string>
+    <string name="hintSenha">Senha</string>
+    <string name="txtNewsletter">Eu gostaria de receber Newsletters do aplicativo e outras informações promocionais.</string>
+    <string name="txtSenhaAlert">* Senha deve conter pelo menos 6 caracteres, com uma letra maiúscula e um número.</string>
+    <string name="titleCadastrar">Cadastrar</string>
+    <string name="titleEntrar">Login</string>
+    <string name="queryHint">Encontrar Estacionamento</string>
+</resources>

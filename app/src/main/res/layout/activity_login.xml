@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.LoginActivity"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar android:id="@+id/toolbarLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/darkBlue"
+        app:title="@string/titleEntrar"/>
+
+    <EditText android:id="@+id/tfEmailLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hintEmail"
+        android:inputType="textEmailAddress"
+        android:autofillHints=""
+        android:background="@drawable/padrao_edittext"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:selectAllOnFocus="true"/>
+
+    <EditText android:id="@+id/tfSenhaLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hintSenha"
+        android:inputType="textPassword"
+        android:autofillHints=""
+        android:background="@drawable/padrao_edittext"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:selectAllOnFocus="true"/>
+
+    <Button android:id="@+id/btnEntrarLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtEntrar"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="32dp"/>
+
+    <TextView android:id="@+id/lblEsqueceuSenha"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="@string/txtEsqueceuSenha"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="@color/darkBlue"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="32dp"/>
+
+</LinearLayout>
