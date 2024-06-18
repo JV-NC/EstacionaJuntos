@@ -1,5 +1,6 @@
 package br.com.jvn.estacionajuntos;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,9 +16,12 @@ import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import br.com.jvn.estacionajuntos.interfaces.DialogFragmentAdapter;
 import br.com.jvn.estacionajuntos.view.HomeActivity;
 
 public class FilterFragment extends DialogFragment {
+    public static final int TAG = 1;
+    DialogFragmentAdapter adapter;
 
     @Nullable
     @Override
@@ -34,8 +38,6 @@ public class FilterFragment extends DialogFragment {
         rdgFiltrar = view.findViewById(R.id.rdgFiltrar);
         btnBuscar = view.findViewById(R.id.btnBuscar);
 
-        rdgFiltrar.check(R.id.rdbEspAb);
-
         btnBuscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,8 +52,19 @@ public class FilterFragment extends DialogFragment {
                 }
 
                 Log.i("FilterFragment","Results: "+filtrar);
+                adapter.sendInput(TAG,filtrar);
                 dismiss();
             }
         });
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        try {
+            adapter = (DialogFragmentAdapter) getActivity();
+        }catch (Exception e){
+            Log.e("FilterFragment","Falha onAttach Adapter!");
+        }
     }
 }

@@ -1,5 +1,6 @@
 package br.com.jvn.estacionajuntos;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,7 +15,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioGroup;
 
+import br.com.jvn.estacionajuntos.interfaces.DialogFragmentAdapter;
+
 public class OrderFragment extends DialogFragment {
+    public static final int TAG = 0;
+    DialogFragmentAdapter adapter;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -47,8 +53,19 @@ public class OrderFragment extends DialogFragment {
                 }
 
                 Log.i("OrderFragment","Resultado: "+ordenar);
+                adapter.sendInput(TAG,ordenar);
                 dismiss();
             }
         });
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        try {
+            adapter = (DialogFragmentAdapter) getActivity();
+        }catch (Exception e){
+            Log.e("OrderFragment","Falha onAttach Adapter!");
+        }
     }
 }

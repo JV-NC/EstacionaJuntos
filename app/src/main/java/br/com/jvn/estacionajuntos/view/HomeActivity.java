@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,21 +18,30 @@ import androidx.core.view.WindowInsetsCompat;
 import br.com.jvn.estacionajuntos.FilterFragment;
 import br.com.jvn.estacionajuntos.OrderFragment;
 import br.com.jvn.estacionajuntos.R;
+import br.com.jvn.estacionajuntos.interfaces.DialogFragmentAdapter;
 import br.com.jvn.estacionajuntos.model.Cadastro;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements DialogFragmentAdapter {
     Toolbar toolbar;
     SearchView searchHome;
     Button btnOrdenarHome, btnFiltrarHome;
+    int ordem, filtro;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        setOrdemFilter();
+
         Cadastro login = getIntent().getParcelableExtra("Cadastro");
         Log.i("login", login != null ? login.toString() : "null");
 
         setLayout();
+    }
+
+    private void setOrdemFilter() {
+        ordem =0;
+        filtro=-1;
     }
 
     private void setLayout() {
@@ -63,5 +73,15 @@ public class HomeActivity extends AppCompatActivity {
     private void filtrar() {
         FilterFragment fragment = new FilterFragment();
         fragment.show(getSupportFragmentManager(),"filterFragment");
+    }
+
+    @Override
+    public void sendInput(int origin, int input) {
+        if(origin==0){
+            ordem = input;
+        } else{
+            filtro = input;
+        }
+        Toast.makeText(this, "Ordem: "+ordem+", Filtro: "+filtro, Toast.LENGTH_SHORT).show();
     }
 }
