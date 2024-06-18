@@ -21,4 +21,11 @@
         android:background="@drawable/searchview_bg"
         app:defaultQueryHint="@string/queryHint"
         app:iconifiedByDefault="false"/>
+
+    <Button android:id="@+id/btnFiltrarHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtFiltrarHome"
+        android:backgroundTint="@color/darkBlue"
+        android:layout_gravity="end" />
 </LinearLayout>

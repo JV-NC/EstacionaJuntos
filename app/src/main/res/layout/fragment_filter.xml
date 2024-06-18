@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FilterFragment">
+
+    <TextView android:id="@+id/lblOrdenar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtOrdenar"
+        android:textSize="24sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView android:id="@+id/lblFiltrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtFiltrar"
+        android:textSize="24sp"
+        android:layout_marginEnd="16dp"
+        android:layout_alignTop="@id/lblOrdenar"
+        android:layout_alignStart="@id/rdgFiltrar"/>
+
+    <RadioGroup android:id="@+id/rdgOrdenar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/lblOrdenar"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp">
+
+        <RadioButton android:id="@+id/rdbMenorPreco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtMenorPreco"
+            android:textSize="16sp"/>
+
+        <RadioButton android:id="@+id/rdbMaiorPreco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtMaiorPreco"
+            android:textSize="16sp"/>
+
+        <RadioButton android:id="@+id/rdbMelhorAv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtMelhorAv"
+            android:textSize="16sp"/>
+
+        <RadioButton android:id="@+id/rdbMenorDist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtMenorDistancia"
+            android:textSize="16sp"/>
+    </RadioGroup>
+
+    <RadioGroup android:id="@+id/rdgFiltrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/lblFiltrar"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp">
+
+        <RadioButton android:id="@+id/rdbEspAb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtEspacoAb"
+            android:textSize="16sp"/>
+
+        <RadioButton android:id="@+id/rdbFuncionamento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtFuncionamento"
+            android:textSize="16sp"/>
+
+        <RadioButton android:id="@+id/rdbDisponibilidade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtDisponibilidade"
+            android:textSize="18sp"/>
+    </RadioGroup>
+
+    <Button android:id="@+id/btnBuscar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtBuscar"
+        android:textSize="18sp"
+        android:backgroundTint="@color/darkBlue"
+        android:layout_below="@id/rdgOrdenar"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"/>
+
+</RelativeLayout>
