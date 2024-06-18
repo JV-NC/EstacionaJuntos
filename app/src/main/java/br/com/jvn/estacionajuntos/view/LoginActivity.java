@@ -66,6 +66,7 @@ public class LoginActivity extends AppCompatActivity {
                     goToHome(cadastro);
                 } else{
                     Toast.makeText(LoginActivity.this, "Email ou senha incorretos!", Toast.LENGTH_SHORT).show();
+                    cadastro = null;
                 }
             }
             else{
