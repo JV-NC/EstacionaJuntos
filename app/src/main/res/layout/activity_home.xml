@@ -22,10 +22,27 @@
         app:defaultQueryHint="@string/queryHint"
         app:iconifiedByDefault="false"/>
 
-    <Button android:id="@+id/btnFiltrarHome"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/txtFiltrarHome"
-        android:backgroundTint="@color/darkBlue"
-        android:layout_gravity="end" />
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/btnOrdenarHome"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/txtOrdenarHome"
+            android:backgroundTint="@color/darkBlue"
+            android:layout_marginStart="8dp"
+            android:layout_alignParentStart="true"/>
+
+        <Button android:id="@+id/btnFiltrarHome"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/txtFiltrarHome"
+            android:backgroundTint="@color/darkBlue"
+            android:layout_marginEnd="8dp"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+
+
 </LinearLayout>

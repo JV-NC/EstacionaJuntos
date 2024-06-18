@@ -23,4 +23,5 @@
     <string name="txtDisponibilidade">Disponibilidade</string>
     <string name="txtBuscar">Buscar</string>
     <string name="txtFiltrarHome">Filtrar</string>
+    <string name="txtOrdenarHome">Ordenar</string>
 </resources>

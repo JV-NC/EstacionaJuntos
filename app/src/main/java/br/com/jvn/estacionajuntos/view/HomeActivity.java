@@ -15,13 +15,14 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import br.com.jvn.estacionajuntos.FilterFragment;
+import br.com.jvn.estacionajuntos.OrderFragment;
 import br.com.jvn.estacionajuntos.R;
 import br.com.jvn.estacionajuntos.model.Cadastro;
 
 public class HomeActivity extends AppCompatActivity {
     Toolbar toolbar;
     SearchView searchHome;
-    Button btnFiltrarHome;
+    Button btnOrdenarHome, btnFiltrarHome;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +37,15 @@ public class HomeActivity extends AppCompatActivity {
     private void setLayout() {
         toolbar = findViewById(R.id.toolbarHome);
         searchHome = findViewById(R.id.searchHome);
+        btnOrdenarHome = findViewById(R.id.btnOrdenarHome);
         btnFiltrarHome = findViewById(R.id.btnFiltrarHome);
+
+        btnOrdenarHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ordenar();
+            }
+        });
 
         btnFiltrarHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +53,11 @@ public class HomeActivity extends AppCompatActivity {
                 filtrar();
             }
         });
+    }
+
+    private void ordenar() {
+        OrderFragment fragment = new OrderFragment();
+        fragment.show(getSupportFragmentManager(),"orderFragment");
     }
 
     private void filtrar() {

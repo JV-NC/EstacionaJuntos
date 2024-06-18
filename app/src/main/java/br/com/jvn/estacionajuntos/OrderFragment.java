@@ -13,43 +13,40 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
-import br.com.jvn.estacionajuntos.view.HomeActivity;
-
-public class FilterFragment extends DialogFragment {
-
+public class OrderFragment extends DialogFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_filter,container,false);
+        return inflater.inflate(R.layout.fragment_order,container,false);
     }
 
-    RadioGroup rdgFiltrar;
+    RadioGroup rdgOrdenar;
     Button btnBuscar;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        rdgFiltrar = view.findViewById(R.id.rdgFiltrar);
+        rdgOrdenar = view.findViewById(R.id.rdgOrdenar);
         btnBuscar = view.findViewById(R.id.btnBuscar);
 
-        rdgFiltrar.check(R.id.rdbEspAb);
+        rdgOrdenar.check(R.id.rdbMenorPreco);
 
         btnBuscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int filtrar=-1;
-
-                if(rdgFiltrar.getCheckedRadioButtonId() == R.id.rdbEspAb){
-                    filtrar = 0;
-                } else if(rdgFiltrar.getCheckedRadioButtonId() == R.id.rdbFuncionamento){
-                    filtrar = 1;
-                } else if(rdgFiltrar.getCheckedRadioButtonId() == R.id.rdbDisponibilidade){
-                    filtrar = 2;
+                int ordenar=-1;
+                if(rdgOrdenar.getCheckedRadioButtonId() == R.id.rdbMenorPreco){
+                    ordenar = 0;
+                } else if(rdgOrdenar.getCheckedRadioButtonId() == R.id.rdbMaiorPreco){
+                    ordenar = 1;
+                } else if(rdgOrdenar.getCheckedRadioButtonId() == R.id.rdbMelhorAv){
+                    ordenar = 2;
+                } else if(rdgOrdenar.getCheckedRadioButtonId() == R.id.rdbMenorDist){
+                    ordenar = 3;
                 }
 
-                Log.i("FilterFragment","Results: "+filtrar);
+                Log.i("OrderFragment","Resultado: "+ordenar);
                 dismiss();
             }
         });
