@@ -19,7 +19,7 @@ import br.com.jvn.estacionajuntos.R;
 import br.com.jvn.estacionajuntos.interfaces.LugarAdapterListener;
 
 public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.LugarViewHolder>{
-    private final ArrayList<Lugar> lugares;
+    private ArrayList<Lugar> lugares;
     private final LugarAdapterListener listener;
     public LugarAdapter(ArrayList<Lugar> lugares, LugarAdapterListener listener){
         this.lugares = lugares;
@@ -28,6 +28,11 @@ public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.LugarViewHol
 
     public ArrayList<Lugar> getLugares(){
         return lugares;
+    }
+
+    public void resetLugares(ArrayList<Lugar> lugares){
+        this.lugares = lugares;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -81,7 +86,7 @@ public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.LugarViewHol
 
             if(lugar.isEspacoAberto()){ //gambiarra
                 imgFoto.setImageResource(R.drawable.estacionamento2);
-            } else if(lugar.isOpen()){
+            } else if(lugar.isIs24H()){
                 imgFoto.setImageResource(R.drawable.estacionamento3);
             }
         }

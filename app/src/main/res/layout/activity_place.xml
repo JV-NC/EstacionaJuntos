@@ -9,7 +9,7 @@
     <ImageView android:id="@+id/imgFotoPlace"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:src="@drawable/basils_cathedral"
+        android:src="@drawable/estacionamento1"
         android:scaleType="center"
         android:contentDescription="@string/descFoto"/>
 

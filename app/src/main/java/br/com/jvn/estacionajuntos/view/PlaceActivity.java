@@ -74,9 +74,9 @@ public class PlaceActivity extends AppCompatActivity {
         lblMensCarro.setText("R$"+money.format(lugar.getMensalidadeCarro())+" : mês");
         lblMensMoto.setText("R$"+money.format(lugar.getMensalidadeMoto())+" : mês");
         if(lugar.isEspacoAberto()){ //gambiarra
-            imgFotoPlace.setImageResource(R.drawable.coliseu_roma);
-        } else if(lugar.isOpen()){
-            imgFotoPlace.setImageResource(R.drawable.arco_triunfo);
+            imgFotoPlace.setImageResource(R.drawable.estacionamento2);
+        } else if(lugar.isIs24H()){
+            imgFotoPlace.setImageResource(R.drawable.estacionamento3);
         }
 
         imgVoltar.setOnClickListener(new View.OnClickListener() {

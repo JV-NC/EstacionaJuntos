@@ -19,6 +19,8 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Random;
 
 import br.com.jvn.estacionajuntos.R;
@@ -149,12 +151,65 @@ public class HomeActivity extends AppCompatActivity implements DialogFragmentAda
 
     @Override
     public void sendInput(int origin, int input) {
+        boolean isOrdemChanged = false, isFilterChanged = false;
         if(origin==0){
+            if(ordem!=input){
+                isOrdemChanged = true;
+            }
             ordem = input;
         } else{
+            if(ordem!=input){
+                isFilterChanged = true;
+            }
             filtro = input;
         }
         Toast.makeText(this, "Ordem: "+ordem+", Filtro: "+filtro, Toast.LENGTH_SHORT).show();
+
+        if(isOrdemChanged){
+            Collections.sort(list, new Comparator<Lugar>() {
+                @Override
+                public int compare(Lugar o1, Lugar o2) {
+                    if(ordem==0){
+                        return Double.compare(o1.getPrecoCarro(),o2.getPrecoCarro()); //<
+                    } else if(ordem==1){
+                        return Double.compare(o2.getPrecoCarro(),o1.getPrecoCarro()); //>
+                    } else if(ordem==2){
+                        return Double.compare(o2.getRating(),o1.getRating()); //>
+                    } else{
+                        return Double.compare(o1.getDistance(),o2.getDistance());  //<
+                    }
+                }
+            });
+            lugarAdapter.notifyDataSetChanged();
+        } else if(isFilterChanged){
+            if(filtro==-1){
+                lugarAdapter.resetLugares(list);
+            } else{
+                ArrayList<Lugar> filteredList = new ArrayList<>();
+                if(filtro==0){
+                    for(Lugar lugar : list){
+                        if(lugar.isEspacoAberto()){
+                            filteredList.add(lugar);
+                        }
+                    }
+                    lugarAdapter.resetLugares(filteredList);
+                } else if(filtro==1){
+                    for(Lugar lugar : list){
+                        if(lugar.isIs24H()){
+                            filteredList.add(lugar);
+                        }
+                    }
+                    lugarAdapter.resetLugares(filteredList);
+                } else{
+                    for(Lugar lugar : list){
+                        if(lugar.isOpen()){
+                            filteredList.add(lugar);
+                        }
+                    }
+                    lugarAdapter.resetLugares(filteredList);
+                }
+            }
+        }
     }
 
     private ArrayList<Lugar> fakePlaces() { //gambiarra
