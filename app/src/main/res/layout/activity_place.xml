@@ -159,14 +159,14 @@
         android:layout_height="wrap_content"
         android:text="R$5.00 : 1 hora"
         android:layout_alignTop="@id/imgCar"
-        android:layout_toEndOf="@id/imgCar"/>
+        android:layout_alignStart="@id/imgMoney"/>
 
     <TextView android:id="@+id/lblPrecoMoto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="R$2.00 : 1 hora"
         android:layout_alignTop="@id/imgMoto"
-        android:layout_toEndOf="@id/imgMoto"/>
+        android:layout_alignStart="@id/imgMoney"/>
 
     <TextView android:id="@+id/lblMensCarro"
         android:layout_width="wrap_content"
