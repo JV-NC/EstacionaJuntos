@@ -14,7 +14,7 @@
         <ImageView android:id="@+id/imgFoto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/basils_cathedral"
+            android:src="@drawable/estacionamento1"
             android:scaleType="center"
             android:contentDescription="@string/descFoto" />
 

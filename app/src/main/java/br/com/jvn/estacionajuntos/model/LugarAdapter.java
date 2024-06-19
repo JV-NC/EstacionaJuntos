@@ -80,9 +80,9 @@ public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.LugarViewHol
             lblRating.setText(star.format(lugar.getRating()));
 
             if(lugar.isEspacoAberto()){ //gambiarra
-                imgFoto.setImageResource(R.drawable.coliseu_roma);
+                imgFoto.setImageResource(R.drawable.estacionamento2);
             } else if(lugar.isOpen()){
-                imgFoto.setImageResource(R.drawable.arco_triunfo);
+                imgFoto.setImageResource(R.drawable.estacionamento3);
             }
         }
     }
