@@ -13,6 +13,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import br.com.jvn.estacionajuntos.R;
 import br.com.jvn.estacionajuntos.interfaces.DialogFragmentAdapter;
@@ -104,26 +105,129 @@ public class HomeActivity extends AppCompatActivity implements DialogFragmentAda
     }
 
     private ArrayList<Lugar> fakePlaces() { //gambiarra
-        ArrayList<Lugar> lista = new ArrayList<>();
-        for(int i=0;i<10;i++){
-            Lugar aux = new Lugar();
-            aux.setNome("Estacionamento "+(i+1));
-            aux.setEndereco("Endereço "+(i+1));
-            aux.setTelefone("9"+(i+2)+"3"+"5"+(i+1)+"0"+i);
-            aux.setDescricao("Descrição "+(10-i));
-            aux.setRating((i%2==0) ? (double) i+1 : ((double) 1 /(i+1)));
-            aux.setOpen(i%2==0);
-            aux.setIs24H(i%2!=0);
-            aux.setEspacoAberto(i%3==0);
-            aux.setOpenCloseTime((aux.isOpen()) ? ("Fecha às "+(i+3)) : ("Abre às "+(i+3)));
-            aux.setDistance((Math.pow(i,2)));
-            aux.setPrecoCarro(Math.pow(i,3));
-            aux.setPrecoMoto(Math.pow(i,3));
-            aux.setMensalidadeCarro(Math.sqrt(i+1000));
-            aux.setMensalidadeMoto(Math.sqrt(i+500));
+        Random random = new Random();
+        String[] horarios = {"08:00", "07:00", "24:00", "06:00", "22:00", "21:00", "18:00"};
 
-            lista.add(aux);
-        }
+        ArrayList<Lugar> lista = new ArrayList<>();
+
+        Lugar aux = new Lugar();
+        aux.setNome("Estacionamento Mattioli");
+        aux.setEndereco("Rua A, 123");
+        aux.setTelefone("(11) 1234-5678");
+        aux.setDescricao("Coberto e seguro");
+        aux.setRating(1.0 + (5.0 - 1.0) * random.nextDouble());
+        aux.setOpen(random.nextBoolean());
+        aux.setIs24H(random.nextBoolean());
+        aux.setEspacoAberto(random.nextBoolean());
+        aux.setOpenCloseTime((aux.isOpen()) ? (". Fecha às "+(horarios[random.nextInt(horarios.length)])) : (". Abre às "+(horarios[random.nextInt(horarios.length)])));
+        aux.setDistance(1.0 + (200.0 - 1.0) * random.nextDouble());
+        aux.setPrecoCarro(5.0 + (50.0 - 5.0) * random.nextDouble());
+        aux.setPrecoMoto(2.0 + (20.0 - 2.0) * random.nextDouble());
+        aux.setMensalidadeCarro(100.0 + (500.0 - 100.0) * random.nextDouble());
+        aux.setMensalidadeMoto(50.0 + (300.0 - 50.0) * random.nextDouble());
+        lista.add(aux);
+
+        aux = new Lugar();
+        aux.setNome("Estacionamento Central");
+        aux.setEndereco("Avenida B, 456");
+        aux.setTelefone("(22) 2345-6789");
+        aux.setDescricao("Espaçoso");
+        aux.setRating(1.0 + (5.0 - 1.0) * random.nextDouble());
+        aux.setOpen(random.nextBoolean());
+        aux.setIs24H(random.nextBoolean());
+        aux.setEspacoAberto(random.nextBoolean());
+        aux.setOpenCloseTime((aux.isOpen()) ? (". Fecha às "+(horarios[random.nextInt(horarios.length)])) : (". Abre às "+(horarios[random.nextInt(horarios.length)])));
+        aux.setDistance(1.0 + (200.0 - 1.0) * random.nextDouble());
+        aux.setPrecoCarro(5.0 + (50.0 - 5.0) * random.nextDouble());
+        aux.setPrecoMoto(2.0 + (20.0 - 2.0) * random.nextDouble());
+        aux.setMensalidadeCarro(100.0 + (500.0 - 100.0) * random.nextDouble());
+        aux.setMensalidadeMoto(50.0 + (300.0 - 50.0) * random.nextDouble());
+        lista.add(aux);
+
+        aux = new Lugar();
+        aux.setNome("Estacionamento Paraiso");
+        aux.setEndereco("Rua C, 789");
+        aux.setTelefone("(33) 3456-7890");
+        aux.setDescricao("Acesso rápido");
+        aux.setRating(1.0 + (5.0 - 1.0) * random.nextDouble());
+        aux.setOpen(random.nextBoolean());
+        aux.setIs24H(random.nextBoolean());
+        aux.setEspacoAberto(random.nextBoolean());
+        aux.setOpenCloseTime((aux.isOpen()) ? (". Fecha às "+(horarios[random.nextInt(horarios.length)])) : (". Abre às "+(horarios[random.nextInt(horarios.length)])));
+        aux.setDistance(1.0 + (200.0 - 1.0) * random.nextDouble());
+        aux.setPrecoCarro(5.0 + (50.0 - 5.0) * random.nextDouble());
+        aux.setPrecoMoto(2.0 + (20.0 - 2.0) * random.nextDouble());
+        aux.setMensalidadeCarro(100.0 + (500.0 - 100.0) * random.nextDouble());
+        aux.setMensalidadeMoto(50.0 + (300.0 - 50.0) * random.nextDouble());
+        lista.add(aux);
+
+        aux = new Lugar();
+        aux.setNome("Estacionamento Novo");
+        aux.setEndereco("Avenida D, 101");
+        aux.setTelefone("(44) 4567-8901");
+        aux.setDescricao("Tarifas econômicas");
+        aux.setRating(1.0 + (5.0 - 1.0) * random.nextDouble());
+        aux.setOpen(random.nextBoolean());
+        aux.setIs24H(random.nextBoolean());
+        aux.setEspacoAberto(random.nextBoolean());
+        aux.setOpenCloseTime((aux.isOpen()) ? (". Fecha às "+(horarios[random.nextInt(horarios.length)])) : (". Abre às "+(horarios[random.nextInt(horarios.length)])));
+        aux.setDistance(1.0 + (200.0 - 1.0) * random.nextDouble());
+        aux.setPrecoCarro(5.0 + (50.0 - 5.0) * random.nextDouble());
+        aux.setPrecoMoto(2.0 + (20.0 - 2.0) * random.nextDouble());
+        aux.setMensalidadeCarro(100.0 + (500.0 - 100.0) * random.nextDouble());
+        aux.setMensalidadeMoto(50.0 + (300.0 - 50.0) * random.nextDouble());
+        lista.add(aux);
+
+        aux = new Lugar();
+        aux.setNome("Estacionamento Premium");
+        aux.setEndereco("Rua E, 202");
+        aux.setTelefone("(55) 5678-9012");
+        aux.setDescricao("Serviço premium");
+        aux.setRating(1.0 + (5.0 - 1.0) * random.nextDouble());
+        aux.setOpen(random.nextBoolean());
+        aux.setIs24H(random.nextBoolean());
+        aux.setEspacoAberto(random.nextBoolean());
+        aux.setOpenCloseTime((aux.isOpen()) ? (". Fecha às "+(horarios[random.nextInt(horarios.length)])) : (". Abre às "+(horarios[random.nextInt(horarios.length)])));
+        aux.setDistance(1.0 + (200.0 - 1.0) * random.nextDouble());
+        aux.setPrecoCarro(5.0 + (50.0 - 5.0) * random.nextDouble());
+        aux.setPrecoMoto(2.0 + (20.0 - 2.0) * random.nextDouble());
+        aux.setMensalidadeCarro(100.0 + (500.0 - 100.0) * random.nextDouble());
+        aux.setMensalidadeMoto(50.0 + (300.0 - 50.0) * random.nextDouble());
+        lista.add(aux);
+
+        aux = new Lugar();
+        aux.setNome("Estacionamento Rápido");
+        aux.setEndereco("Avenida F, 303");
+        aux.setTelefone("(66) 6789-0123");
+        aux.setDescricao("Funcionamento 24h");
+        aux.setRating(1.0 + (5.0 - 1.0) * random.nextDouble());
+        aux.setOpen(random.nextBoolean());
+        aux.setIs24H(random.nextBoolean());
+        aux.setEspacoAberto(random.nextBoolean());
+        aux.setOpenCloseTime((aux.isOpen()) ? (". Fecha às "+(horarios[random.nextInt(horarios.length)])) : (". Abre às "+(horarios[random.nextInt(horarios.length)])));
+        aux.setDistance(1.0 + (200.0 - 1.0) * random.nextDouble());
+        aux.setPrecoCarro(5.0 + (50.0 - 5.0) * random.nextDouble());
+        aux.setPrecoMoto(2.0 + (20.0 - 2.0) * random.nextDouble());
+        aux.setMensalidadeCarro(100.0 + (500.0 - 100.0) * random.nextDouble());
+        aux.setMensalidadeMoto(50.0 + (300.0 - 50.0) * random.nextDouble());
+        lista.add(aux);
+
+        aux = new Lugar();
+        aux.setNome("Estacionamento Seguro");
+        aux.setEndereco("Rua G, 404");
+        aux.setTelefone("(77) 7890-1234");
+        aux.setDescricao("Próximo ao centro");
+        aux.setRating(1.0 + (5.0 - 1.0) * random.nextDouble());
+        aux.setOpen(random.nextBoolean());
+        aux.setIs24H(random.nextBoolean());
+        aux.setEspacoAberto(random.nextBoolean());
+        aux.setOpenCloseTime((aux.isOpen()) ? (". Fecha às "+(horarios[random.nextInt(horarios.length)])) : (". Abre às "+(horarios[random.nextInt(horarios.length)])));
+        aux.setDistance(1.0 + (200.0 - 1.0) * random.nextDouble());
+        aux.setPrecoCarro(5.0 + (50.0 - 5.0) * random.nextDouble());
+        aux.setPrecoMoto(2.0 + (20.0 - 2.0) * random.nextDouble());
+        aux.setMensalidadeCarro(100.0 + (500.0 - 100.0) * random.nextDouble());
+        aux.setMensalidadeMoto(50.0 + (300.0 - 50.0) * random.nextDouble());
+        lista.add(aux);
 
         return lista;
     }

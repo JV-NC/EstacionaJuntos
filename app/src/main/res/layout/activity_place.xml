@@ -39,6 +39,26 @@
         android:layout_alignTop="@id/imgMarker"
         android:layout_toEndOf="@id/imgMarker"/>
 
+    <ImageView android:id="@+id/imgVoltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/outline_back_24_black"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/padrao_textview"
+        android:contentDescription="@string/descVoltar"/>
+    
+    <TextView android:id="@+id/lblDistancia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="300m"
+        android:textSize="16sp"
+        android:background="@drawable/padrao_textview"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"/>
+
     <ImageView android:id="@+id/imgStarPlace"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -87,6 +107,7 @@
         android:layout_height="wrap_content"
         android:text="Era uma casa muito engraçada. Não tinha teto, não tinha nada. Ninguém podia entra nela não. Porque na casa não tinha chão. Ninguém podia dormir na rede. Porque na casa não tinha parede. Ninguém podia fazer pipi. Porque pinico não tinha ali. Mas era feita com muito esmero"
         android:textSize="12sp"
+        android:layout_margin="8dp"
         android:layout_below="@id/lblOpen"/>
 
     <ImageView android:id="@+id/imgMoney"

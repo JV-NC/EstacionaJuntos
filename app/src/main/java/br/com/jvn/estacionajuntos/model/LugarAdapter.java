@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import br.com.jvn.estacionajuntos.R;
@@ -56,13 +57,14 @@ public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.LugarViewHol
     }
 
     class LugarViewHolder extends RecyclerView.ViewHolder{
-        TextView lblNome, lblEndereco, lblRating;
+        TextView lblNome, lblDistanciaItem, lblEndereco, lblRating;
         ImageView imgFoto;
         CardView cvContainer;
 
         public LugarViewHolder(@NonNull View view) {
             super(view);
             lblNome = view.findViewById(R.id.lblNome);
+            lblDistanciaItem = view.findViewById(R.id.lblDistanciaItem);
             lblEndereco = view.findViewById(R.id.lblEndereco);
             lblRating = view.findViewById(R.id.lblRating);
             imgFoto = view.findViewById(R.id.imgFoto);
@@ -70,9 +72,12 @@ public class LugarAdapter extends RecyclerView.Adapter<LugarAdapter.LugarViewHol
         }
 
         public void bind(Lugar lugar) {
+            DecimalFormat df = new DecimalFormat("#");
+            DecimalFormat star = new DecimalFormat("0.0");
             lblNome.setText(lugar.getNome());
+            lblDistanciaItem.setText(df.format(lugar.getDistance())+"m");
             lblEndereco.setText(lugar.getEndereco());
-            lblRating.setText(String.valueOf(lugar.getRating()));
+            lblRating.setText(star.format(lugar.getRating()));
 
             if(lugar.isEspacoAberto()){ //gambiarra
                 imgFoto.setImageResource(R.drawable.coliseu_roma);

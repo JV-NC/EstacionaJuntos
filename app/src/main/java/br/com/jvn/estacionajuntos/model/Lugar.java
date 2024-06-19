@@ -44,8 +44,8 @@ public class Lugar implements Parcelable {
             isEspacoAberto = in.readInt() !=0;
         }
 
-        OpenCloseTime = in.readString();
         distance = in.readDouble();
+        OpenCloseTime = in.readString();
         precoCarro = in.readDouble();
         precoMoto = in.readDouble();
         mensalidadeCarro = in.readDouble();
@@ -101,7 +101,7 @@ public class Lugar implements Parcelable {
     }
 
     public void setRating(double rating) {
-        this.rating = (rating<0.00 || rating>5.0) ? rating : 0.1;
+        this.rating = (rating>=0.00 && rating<=5.0) ? rating : 0.1;
     }
 
     public boolean isOpen() {

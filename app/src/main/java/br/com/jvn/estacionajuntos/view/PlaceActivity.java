@@ -16,8 +16,8 @@ import br.com.jvn.estacionajuntos.R;
 import br.com.jvn.estacionajuntos.model.Lugar;
 
 public class PlaceActivity extends AppCompatActivity {
-    TextView lblNomePlace, lblEnderecoPlace, lblRatingPlace, lblOpen, lblCloseTime,lblTelefone, lblDescricao, lblPrecoCarro, lblPrecoMoto, lblMensCarro, lblMensMoto;
-    ImageView imgFotoPlace;
+    TextView lblNomePlace, lblEnderecoPlace, lblRatingPlace, lblOpen, lblCloseTime,lblTelefone, lblDescricao, lblPrecoCarro, lblPrecoMoto, lblMensCarro, lblMensMoto, lblDistancia;
+    ImageView imgFotoPlace, imgVoltar;
     Button btnMostrarMapa;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,13 +45,17 @@ public class PlaceActivity extends AppCompatActivity {
         lblPrecoMoto = findViewById(R.id.lblPrecoMoto);
         lblMensCarro = findViewById(R.id.lblMensCarro);
         lblMensMoto = findViewById(R.id.lblMensMoto);
+        lblDistancia = findViewById(R.id.lblDistancia);
         imgFotoPlace = findViewById(R.id.imgFotoPlace);
+        imgVoltar = findViewById(R.id.imgVoltar);
         btnMostrarMapa = findViewById(R.id.btnMostrarMapa);
 
         lblNomePlace.setText(lugar.getNome());
         lblEnderecoPlace.setText(lugar.getEndereco());
-        DecimalFormat df = new DecimalFormat("#.##");
-        lblRatingPlace.setText(df.format(lugar.getRating()));
+        DecimalFormat df = new DecimalFormat("#");
+        DecimalFormat star = new DecimalFormat("0.0");
+        DecimalFormat money = new DecimalFormat("0.00");
+        lblRatingPlace.setText(star.format(lugar.getRating()));
         if(lugar.isOpen()){
             lblOpen.setText("Aberto");
             lblOpen.setTextColor(getColor(R.color.Green));
@@ -62,15 +66,23 @@ public class PlaceActivity extends AppCompatActivity {
         lblCloseTime.setText(lugar.getOpenCloseTime());
         lblTelefone.setText(lugar.getTelefone());
         lblDescricao.setText(lugar.getDescricao());
-        lblPrecoCarro.setText("R$"+df.format(lugar.getPrecoCarro())+" : 1 hora");
-        lblPrecoMoto.setText("R$"+df.format(lugar.getPrecoMoto())+" : 1 hora");
-        lblMensCarro.setText("R$"+df.format(lugar.getMensalidadeCarro())+" : mês");
-        lblMensMoto.setText("R$"+df.format(lugar.getMensalidadeMoto())+" : mês");
+        lblDistancia.setText(df.format(lugar.getDistance())+"m");
+        lblPrecoCarro.setText("R$"+money.format(lugar.getPrecoCarro())+" : 1 hora");
+        lblPrecoMoto.setText("R$"+money.format(lugar.getPrecoMoto())+" : 1 hora");
+        lblMensCarro.setText("R$"+money.format(lugar.getMensalidadeCarro())+" : mês");
+        lblMensMoto.setText("R$"+money.format(lugar.getMensalidadeMoto())+" : mês");
         if(lugar.isEspacoAberto()){ //gambiarra
             imgFotoPlace.setImageResource(R.drawable.coliseu_roma);
         } else if(lugar.isOpen()){
             imgFotoPlace.setImageResource(R.drawable.arco_triunfo);
         }
+
+        imgVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         
         btnMostrarMapa.setOnClickListener(new View.OnClickListener() {
             @Override
