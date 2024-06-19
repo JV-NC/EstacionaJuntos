@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.PlaceActivity">
+
+    <ImageView android:id="@+id/imgFotoPlace"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:src="@drawable/basils_cathedral"
+        android:scaleType="center"
+        android:contentDescription="@string/descFoto"/>
+
+    <TextView android:id="@+id/lblNomePlace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginStart="8dp"
+        android:layout_below="@id/imgFotoPlace"/>
+
+    <ImageView android:id="@+id/imgMarker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/outline_marker_24_black"
+        android:layout_alignStart="@id/lblNomePlace"
+        android:layout_below="@id/lblNomePlace"
+        android:contentDescription="@string/descMarker"/>
+
+    <TextView android:id="@+id/lblEnderecoPlace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Endereço"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_alignTop="@id/imgMarker"
+        android:layout_toEndOf="@id/imgMarker"/>
+
+    <ImageView android:id="@+id/imgVoltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/outline_back_24_black"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/padrao_textview"
+        android:contentDescription="@string/descVoltar"/>
+    
+    <TextView android:id="@+id/lblDistancia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="300m"
+        android:textSize="16sp"
+        android:background="@drawable/padrao_textview"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"/>
+
+    <ImageView android:id="@+id/imgStarPlace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/filled_star_24_orange"
+        android:layout_marginEnd="8dp"
+        android:layout_alignTop="@id/lblNomePlace"
+        android:layout_alignParentEnd="true"
+        android:contentDescription="@string/descStar"/>
+
+    <TextView android:id="@+id/lblRatingPlace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5.0"
+        android:textSize="18sp"
+        android:layout_marginEnd="8dp"
+        android:layout_alignTop="@id/lblNomePlace"
+        android:layout_toStartOf="@id/imgStarPlace"/>
+
+    <TextView android:id="@+id/lblOpen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aberto"
+        android:textSize="14sp"
+        android:textColor="@color/Green"
+        android:layout_alignStart="@id/imgMarker"
+        android:layout_below="@id/imgMarker"/>
+
+    <TextView android:id="@+id/lblCloseTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=". Fecha às 23h"
+        android:textSize="14sp"
+        android:layout_toEndOf="@id/lblOpen"
+        android:layout_below="@+id/imgMarker"/>
+    
+    <TextView android:id="@+id/lblTelefone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(66)12345-6789"
+        android:textSize="14sp"
+        android:layout_below="@id/imgMarker"
+        android:layout_alignEnd="@id/imgStarPlace"/>
+
+    <TextView android:id="@+id/lblDescricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Era uma casa muito engraçada. Não tinha teto, não tinha nada. Ninguém podia entra nela não. Porque na casa não tinha chão. Ninguém podia dormir na rede. Porque na casa não tinha parede. Ninguém podia fazer pipi. Porque pinico não tinha ali. Mas era feita com muito esmero"
+        android:textSize="12sp"
+        android:layout_margin="8dp"
+        android:layout_below="@id/lblOpen"/>
+
+    <ImageView android:id="@+id/imgMoney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/outline_money_24_black"
+        android:layout_marginStart="16dp"
+        android:layout_below="@id/lblDescricao"
+        android:layout_toEndOf="@id/imgMarker"
+        android:contentDescription="@string/descMoney"/>
+
+    <ImageView android:id="@+id/imgClock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/outline_clock_24_black"
+        android:layout_marginStart="128dp"
+        android:layout_below="@id/lblDescricao"
+        android:layout_toEndOf="@id/imgMoney"
+        android:contentDescription="@string/descClock"/>
+
+    <ImageView android:id="@+id/imgCar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/outline_car_24_black"
+        android:layout_below="@id/imgMoney"
+        android:layout_alignStart="@id/imgMarker"
+        android:contentDescription="@string/descCar"/>
+
+    <ImageView android:id="@+id/imgMoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/outline_motorcycle_24_black"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/imgCar"
+        android:layout_alignStart="@id/imgMarker"
+        android:contentDescription="@string/descMoto"/>
+
+    <Button android:id="@+id/btnMostrarMapa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtMostrarMapa"
+        android:backgroundTint="@color/darkBlue"
+        android:layout_marginTop="32dp"
+        android:layout_below="@id/imgMoto"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView android:id="@+id/lblPrecoCarro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R$5.00 : 1 hora"
+        android:layout_alignTop="@id/imgCar"
+        android:layout_alignStart="@id/imgMoney"/>
+
+    <TextView android:id="@+id/lblPrecoMoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R$2.00 : 1 hora"
+        android:layout_alignTop="@id/imgMoto"
+        android:layout_alignStart="@id/imgMoney"/>
+
+    <TextView android:id="@+id/lblMensCarro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R$200.00 : mês"
+        android:layout_alignTop="@id/imgCar"
+        android:layout_alignStart="@id/imgClock"/>
+
+    <TextView android:id="@+id/lblMensMoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R$90.00 : mês"
+        android:layout_alignTop="@id/imgMoto"
+        android:layout_alignStart="@id/imgClock"/>
+</RelativeLayout>

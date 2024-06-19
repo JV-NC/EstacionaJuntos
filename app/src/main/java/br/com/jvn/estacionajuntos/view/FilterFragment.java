@@ -1,4 +1,4 @@
-package br.com.jvn.estacionajuntos;
+package br.com.jvn.estacionajuntos.view;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import br.com.jvn.estacionajuntos.R;
 import br.com.jvn.estacionajuntos.interfaces.DialogFragmentAdapter;
 import br.com.jvn.estacionajuntos.view.HomeActivity;
 

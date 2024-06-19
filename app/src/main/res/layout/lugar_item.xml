@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/activity_home"
+    android:id="@+id/cvContainer"
+    android:layout_margin="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView android:id="@+id/imgFoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/basils_cathedral"
+            android:scaleType="center"
+            android:contentDescription="@string/descFoto" />
+
+        <TextView android:id="@+id/lblNome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nome"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@drawable/padrao_textview"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"/>
+
+        <TextView android:id="@+id/lblDistanciaItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="300m"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@drawable/padrao_textview"
+            android:layout_alignTop="@id/lblNome"
+            android:layout_alignEnd="@id/imgStar"/>
+
+        <TextView android:id="@+id/lblEndereco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Endereço"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@drawable/padrao_textview"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"/>
+
+        <ImageView android:id="@+id/imgStar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/filled_star_24_orange"
+            android:layout_marginEnd="8dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBottom="@id/lblEndereco"
+            android:contentDescription="@string/descStar" />
+
+        <TextView android:id="@+id/lblRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5.0"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@drawable/padrao_textview"
+            android:layout_marginEnd="8dp"
+            android:layout_alignBottom="@id/lblEndereco"
+            android:layout_toStartOf="@id/imgStar"/>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
