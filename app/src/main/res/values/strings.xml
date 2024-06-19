@@ -24,4 +24,6 @@
     <string name="txtBuscar">Buscar</string>
     <string name="txtFiltrarHome">Filtrar</string>
     <string name="txtOrdenarHome">Ordenar</string>
+    <string name="descStar">Ícone de estrela</string>
+    <string name="descFoto">Foto do Lugar</string>
 </resources>
