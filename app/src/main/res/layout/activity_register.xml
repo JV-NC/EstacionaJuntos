@@ -12,7 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/darkBlue"
-        app:title="@string/titleCadastrar"/>
+        app:title="@string/titleCadastrar"
+        app:titleMarginStart="18dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
     <ScrollView
         android:layout_width="match_parent"

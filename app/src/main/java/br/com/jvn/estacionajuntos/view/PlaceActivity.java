@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,7 +18,8 @@ import br.com.jvn.estacionajuntos.model.Lugar;
 
 public class PlaceActivity extends AppCompatActivity {
     TextView lblNomePlace, lblEnderecoPlace, lblRatingPlace, lblOpen, lblCloseTime,lblTelefone, lblDescricao, lblPrecoCarro, lblPrecoMoto, lblMensCarro, lblMensMoto, lblDistancia;
-    ImageView imgFotoPlace, imgVoltar;
+    ImageView imgFotoPlace;
+    ImageButton imgVoltar;
     Button btnMostrarMapa;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

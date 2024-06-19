@@ -8,11 +8,32 @@
     tools:context=".view.HomeActivity"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.Toolbar android:id="@+id/toolbarHome"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/darkBlue"
-        app:title="@string/app_name"/>
+        android:orientation="horizontal">
+
+        <ImageButton android:id="@+id/imgMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/outline_menu_24_white"
+            android:backgroundTint="@color/darkBlue"
+            android:contentDescription="@string/descMenu"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"/>
+
+        <ImageButton android:id="@+id/imgConta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/filled_account_24_white"
+            android:backgroundTint="@color/darkBlue"
+            android:layout_marginEnd="8dp"
+            android:layout_alignTop="@id/imgMenu"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="@string/descConta"/>
+    </RelativeLayout>
 
     <androidx.appcompat.widget.SearchView android:id="@+id/searchHome"
         android:layout_width="match_parent"

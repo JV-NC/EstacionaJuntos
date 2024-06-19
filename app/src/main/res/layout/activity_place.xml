@@ -39,7 +39,7 @@
         android:layout_alignTop="@id/imgMarker"
         android:layout_toEndOf="@id/imgMarker"/>
 
-    <ImageView android:id="@+id/imgVoltar"
+    <ImageButton android:id="@+id/imgVoltar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/outline_back_24_black"

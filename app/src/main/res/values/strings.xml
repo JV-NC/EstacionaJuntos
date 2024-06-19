@@ -33,4 +33,6 @@
     <string name="descMoto">Ícone de Moto</string>
     <string name="txtMostrarMapa">Mostrar no Mapa</string>
     <string name="descVoltar">Ícone de Voltar</string>
+    <string name="descMenu">Ícone de Menu</string>
+    <string name="descConta">Ícone de Conta</string>
 </resources>
