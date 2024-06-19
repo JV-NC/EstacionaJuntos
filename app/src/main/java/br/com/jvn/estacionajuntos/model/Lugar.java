@@ -1,6 +1,12 @@
 package br.com.jvn.estacionajuntos.model;
 
-public class Lugar {
+import android.os.Build;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
+public class Lugar implements Parcelable {
     private String nome;
     private String endereco;
     private String telefone;
@@ -21,6 +27,42 @@ public class Lugar {
         setIs24H(false);
         setEspacoAberto(false);
     }
+
+    protected Lugar(Parcel in) {
+        nome = in.readString();
+        endereco = in.readString();
+        telefone = in.readString();
+        descricao = in.readString();
+        rating = in.readDouble();
+        if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.Q){
+            isOpen = in.readBoolean();
+            is24H = in.readBoolean();
+            isEspacoAberto = in.readBoolean();
+        } else{
+            isOpen = in.readInt() !=0;
+            is24H = in.readInt() !=0;
+            isEspacoAberto = in.readInt() !=0;
+        }
+
+        OpenCloseTime = in.readString();
+        distance = in.readDouble();
+        precoCarro = in.readDouble();
+        precoMoto = in.readDouble();
+        mensalidadeCarro = in.readDouble();
+        mensalidadeMoto = in.readDouble();
+    }
+
+    public static final Creator<Lugar> CREATOR = new Creator<Lugar>() {
+        @Override
+        public Lugar createFromParcel(Parcel in) {
+            return new Lugar(in);
+        }
+
+        @Override
+        public Lugar[] newArray(int size) {
+            return new Lugar[size];
+        }
+    };
 
     public String getNome() {
         return nome;
@@ -132,5 +174,46 @@ public class Lugar {
 
     public void setMensalidadeMoto(double mensalidadeMoto) {
         this.mensalidadeMoto = mensalidadeMoto;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeString(nome);
+        dest.writeString(endereco);
+        dest.writeString(telefone);
+        dest.writeString(descricao);
+        dest.writeDouble(rating);
+        if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.Q){
+            dest.writeBoolean(isOpen);
+            dest.writeBoolean(is24H);
+            dest.writeBoolean(isEspacoAberto);
+        }else{
+            if(isOpen){
+                dest.writeInt(1);
+            } else{
+                dest.writeInt(0);
+            }
+            if(is24H) {
+                dest.writeInt(1);
+            } else{
+                dest.writeInt(0);
+            }
+            if(isEspacoAberto){
+                dest.writeInt(1);
+            } else{
+                dest.writeInt(0);
+            }
+        }
+        dest.writeDouble(distance);
+        dest.writeString(OpenCloseTime);
+        dest.writeDouble(precoCarro);
+        dest.writeDouble(precoMoto);
+        dest.writeDouble(mensalidadeCarro);
+        dest.writeDouble(mensalidadeMoto);
     }
 }

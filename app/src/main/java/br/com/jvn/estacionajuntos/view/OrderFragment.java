@@ -1,4 +1,4 @@
-package br.com.jvn.estacionajuntos;
+package br.com.jvn.estacionajuntos.view;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioGroup;
 
+import br.com.jvn.estacionajuntos.R;
 import br.com.jvn.estacionajuntos.interfaces.DialogFragmentAdapter;
 
 public class OrderFragment extends DialogFragment {

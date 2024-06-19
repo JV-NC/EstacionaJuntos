@@ -7,21 +7,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-import br.com.jvn.estacionajuntos.FilterFragment;
-import br.com.jvn.estacionajuntos.OrderFragment;
 import br.com.jvn.estacionajuntos.R;
 import br.com.jvn.estacionajuntos.interfaces.DialogFragmentAdapter;
+import br.com.jvn.estacionajuntos.interfaces.LugarAdapterListener;
 import br.com.jvn.estacionajuntos.model.Cadastro;
 import br.com.jvn.estacionajuntos.model.Lugar;
 import br.com.jvn.estacionajuntos.model.LugarAdapter;
@@ -46,7 +41,16 @@ public class HomeActivity extends AppCompatActivity implements DialogFragmentAda
 
         list = fakePlaces();
 
-        lugarAdapter = new LugarAdapter(list);
+        lugarAdapter = new LugarAdapter(list, new LugarAdapterListener() {
+            @Override
+            public void onItemClick(int position) {
+                Intent it = new Intent(HomeActivity.this, PlaceActivity.class);
+                it.putExtra("Lugar",lugarAdapter.getLugares().get(position));
+                it.putExtra("position",position);
+
+                startActivity(it);
+            }
+        });
 
         setLayout();
     }
@@ -111,6 +115,7 @@ public class HomeActivity extends AppCompatActivity implements DialogFragmentAda
             aux.setOpen(i%2==0);
             aux.setIs24H(i%2!=0);
             aux.setEspacoAberto(i%3==0);
+            aux.setOpenCloseTime((aux.isOpen()) ? ("Fecha às "+(i+3)) : ("Abre às "+(i+3)));
             aux.setDistance((Math.pow(i,2)));
             aux.setPrecoCarro(Math.pow(i,3));
             aux.setPrecoMoto(Math.pow(i,3));

@@ -26,4 +26,10 @@
     <string name="txtOrdenarHome">Ordenar</string>
     <string name="descStar">Ícone de estrela</string>
     <string name="descFoto">Foto do Lugar</string>
+    <string name="descMarker">Ícone de Marcador</string>
+    <string name="descMoney">Ícone de Dinheiro</string>
+    <string name="descClock">Ícone de Relógio</string>
+    <string name="descCar">Ícone de Carro</string>
+    <string name="descMoto">Ícone de Moto</string>
+    <string name="txtMostrarMapa">Mostrar no Mapa</string>
 </resources>
